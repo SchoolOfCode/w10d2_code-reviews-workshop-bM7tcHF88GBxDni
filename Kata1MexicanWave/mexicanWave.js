@@ -13,12 +13,18 @@ function wave(str) {
   return result as the final answer
   */
 
-let newArr = []
-for (let i = 0; i < str.length; i++) {
-  let char = str.charAt(i).toUpperCase();
+  let newArr = [];
 
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== ' ') {
+      let char = str.charAt(i).toUpperCase();
+      let newWord = str.slice(0, i) + char + str.slice(i + 1, str.length);
+      newArr.push(newWord);
+    }
+  }
+  console.log(newArr);
+
+  return newArr;
 }
-
-}
-
+wave('hello');
 export default wave;
